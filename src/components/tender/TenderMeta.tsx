@@ -18,11 +18,11 @@ const TenderMeta = ({tender}: TenderMetaProps) => {
                     <span className="ml-1">Bounty</span>
                 </p>
                 <span>{tender.amount}</span>
-                <span>{tender.coin}</span>
+                <span className="pl-1">{tender.coin}</span>
             </div>
 
-            <div className="hidden md:flex">
-                <p className="flex mb-1">
+            <div className="hidden md:block">
+                <p className="flex md:block mb-1">
                     <CalendarIcon />
                     <span className="ml-1">Open until</span>
                 </p>

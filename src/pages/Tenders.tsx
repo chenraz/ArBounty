@@ -12,14 +12,12 @@ const Tenders = () => {
     return (
         <div>
             <h1>Tenders</h1>
-            { !tenders &&
+            { (!tenders  || 1 > tenders.length) && 
                 <div className="flex justify-center">
                     <SpinnerIcon />
                 </div>
             }
-            {tenders && 1 > tenders.length && 
-                <p className="my-6">No tenders were found.</p>
-            }
+
             {tenders && 0 < tenders.length &&
             
                 <ul className="mt-8">

@@ -57,7 +57,9 @@ function App() {
               </Link>
             </div>
             <div className="flex items-start gap-1">
-              <ColorModPicker {...{mode,setMode}} />
+              <span className="-translate-y-0.5">
+                <ColorModPicker {...{mode,setMode}} />
+              </span>
               {wallet &&
                 <Logout setWallet={setWallet} />
               }

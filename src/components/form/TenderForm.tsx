@@ -85,7 +85,7 @@ const TenderForm = ({publicAddress, wallet}: TenderFormProps) => {
                     }}
                 >
                     <option value="Ar">Ar</option>
-                    <option value="Winston">Windton</option>
+                    <option value="Winston">Winston</option>
                 </select>
             </div>
             <div>

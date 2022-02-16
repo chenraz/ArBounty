@@ -117,7 +117,7 @@ export const useTender = (taxId: string) => {
 
 export const useTenders = () => {
 
-    const [tenders, setTenders ] = useState<Tender[]>([])
+    const [tenders, setTenders ] = useState<Tender[] | null>(null)
 
     useEffect( 
         () => {

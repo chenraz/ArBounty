@@ -11,16 +11,20 @@ const Tenders = () => {
 
     return (
         <div>
-            <h1>Tenders</h1>
-            { (!tenders  || 1 > tenders.length) && 
+            <h1 className="mb-8">Tenders</h1>
+            { !tenders && 
                 <div className="flex justify-center">
                     <SpinnerIcon />
                 </div>
             }
 
+            { tenders && 0 === tenders.length &&
+                <p>No tehnder were published yet.</p>
+            }
+
             {tenders && 0 < tenders.length &&
             
-                <ul className="mt-8">
+                <ul>
                     { tenders.map((tender, i) => (
                         <li key={i} className="my-6">
                             <TenderRow tender={tender} />

@@ -178,15 +178,11 @@ type CreateTenderProps = {
 }
 export const createTender = async ({tender, wallet}: CreateTenderProps) => {
     
-    const quantity = "Ar" === tender.coin
-        ? arweave.ar.arToWinston(tender.amount)
-        : tender.amount
     const target = process.env.REACT_APP_WALLET
     const tx = await arweave.createTransaction(
         {
             data: JSON.stringify(tender),
             target,
-            quantity
         },
         wallet
     )
@@ -249,7 +245,7 @@ export const chooseBid = async ({bid, tender, wallet}: ChooseBidProps) => {
             data: JSON.stringify({
                 bidId: bid.taxId
             }),
-            quantity: `${0.9 * parseFloat(tender.amount)}`,
+            quantity: tender.amount,
             target: bid.owner
         },
         wallet

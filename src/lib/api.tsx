@@ -178,11 +178,9 @@ type CreateTenderProps = {
 }
 export const createTender = async ({tender, wallet}: CreateTenderProps) => {
     
-    const target = process.env.REACT_APP_WALLET
     const tx = await arweave.createTransaction(
         {
             data: JSON.stringify(tender),
-            target,
         },
         wallet
     )

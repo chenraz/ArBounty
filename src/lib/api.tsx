@@ -243,7 +243,9 @@ export const chooseBid = async ({bid, tender, wallet}: ChooseBidProps) => {
             data: JSON.stringify({
                 bidId: bid.taxId
             }),
-            quantity: tender.amount,
+            quantity: "Winston" === tender.coin
+                ?   tender.amount
+                :   arweave.ar.arToWinston(tender.amount),
             target: bid.owner
         },
         wallet
